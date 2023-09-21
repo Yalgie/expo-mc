@@ -14,7 +14,7 @@ title: Expo MC
 
 ---
 layout: image-right
-image: /qr.png
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/qr.png?alt=media&token=15f94888-e122-446e-a154-0a65df820129
 ---
 # Hey 👋
 
@@ -55,7 +55,7 @@ Quick heads up on what we're diving into:
 
 ---
 layout: image-right
-image: /ios-android.png
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/ios-android.png?alt=media&token=2f69ede4-dd2d-4d9f-9e7f-4b456454b4a7
 ---
 
 # Native Development
@@ -77,7 +77,7 @@ To explain expo let's first look at traditional app development
 
 ---
 layout: image-right
-image: /rn.png
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/rn.png?alt=media&token=04b12795-81b5-43e2-b4db-13e58360664f
 ---
 
 # React Native
@@ -97,7 +97,7 @@ image: /rn.png
 
 ---
 layout: image-right
-image: /expo-logo.png
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/expo-logo.png?alt=media&token=4fd0ee09-861c-4cad-8b9c-871999586baf
 ---
 
 # Expo
