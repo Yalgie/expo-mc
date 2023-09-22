@@ -28,6 +28,13 @@ __Got your eye on these slides?__
 
 __Scan that QR code. Let's dive in!__
 
+Or type this URL [https://github.com/Yalgie/expo-mc](https://github.com/Yalgie/expo-mc)
+
+<!--
+Show of hands who has worked with React?
+Started with Flash, AS3, jQuery
+-->
+
 ---
 layout: image-right
 image: https://images.unsplash.com/photo-1574169208507-84376144848b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2679&q=80
@@ -46,11 +53,10 @@ __Excited? Let's dive in!__
 <!--
 Quick heads up on what we're diving into:
 
-- If you've played around with React, you'll spot some familiar terrain.
-- We'll zoom out for a panoramic view of Expo. A massive part of this app stuff is being comfortable with build and knowing your way around the app stores
-- Our roadmap will cover the entire development cycle, from conception to deployment.
-- I'll highlight some nuances unique to this world – things that might initially trip you up.
-- Fair warning: the build section will be more of a watch-and-learn rather than a hands-on exercise. But fret not, you'll grasp the essentials!
+- Split in 2 halves, High level Expo
+- Build/Submit
+- Mac, not 100% sure how windows will go, sims etc
+- Build stage probs can't follow along
 -->
 
 ---
@@ -58,7 +64,7 @@ layout: image-right
 image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/ios-android.png?alt=media&token=2f69ede4-dd2d-4d9f-9e7f-4b456454b4a7
 ---
 
-# Native Development
+# Native Platforms
 
 - __Performance:__ Native apps have superior, consistent performance.
 - __Deep OS Access:__ Direct use of all device and OS features.
@@ -73,6 +79,9 @@ image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/
 
 <!-- 
 To explain expo let's first look at traditional app development
+2 main OSs
+android java / kotlin
+ios obc / swift
 -->
 
 ---
@@ -134,7 +143,7 @@ Expo Go allows you to run and test your apps without the fuss of dealing with si
 _A little tip: as we proceed, ensure that your laptop and phone share the same wifi connection. Let's get things rolling!_
 
 <!--
-
+SAME WIFI
 -->
 
 ---
@@ -325,6 +334,11 @@ In order to install them however you need to download the development environmen
 
 **Android Studio**: [hhttps://developer.android.com/studio](hhttps://developer.android.com/studio)
 
+**iOS Setup**: [https://docs.expo.dev/workflow/ios-simulator/](https://docs.expo.dev/workflow/ios-simulator/)
+
+**Android setup** [https://docs.expo.dev/workflow/android-studio-emulator/](https://docs.expo.dev/workflow/android-studio-emulator/)
+
+
 _Don't do this right now, they are pretty big downloads_
 
 <!--
@@ -404,7 +418,7 @@ export default function Button({ onPress, title }) {
 <!--
 - Button is not stylable
 - Button renders diffeerently on android/ios [https://docs.expo.dev/ui-programming/react-native-styling-buttons/](https://docs.expo.dev/ui-programming/react-native-styling-buttons/)
-- May see TouchableOpacity
+- May see TouchableOpacity [https://reactnative.dev/docs/touchableopacity](https://reactnative.dev/docs/touchableopacity)
 -->
 
 ---
@@ -473,7 +487,7 @@ const styles = StyleSheet.create({
 - Add Stylesheet and styles in
 - paddingVertical/Horizontal vs left/right
 - Update components with styles
-- No on press effect
+- No on press effect (opacity)
 - Why? Can wrap anything so it doesn't have default styling, images etc
 -->
 
@@ -530,7 +544,13 @@ Here a some popular options:
 
 # Understanding Expo Errors & Warnings
 
-When developing in Expo, you'll come across two distinct types of warnings and errors: the **RedBox** and the _YellowBox_. These visual cues are immensely helpful in identifying and resolving issues in your application.
+When developing in Expo, you'll come across two distinct types of warnings and errors: 
+
+- **RedBox**
+
+- _YellowBox_
+
+These visual cues are immensely helpful in identifying and resolving issues in your application.
 
 These warnings and errors are usually accompanied by a helpful message and stack trace to help you hunt down the issue at hand. 
 
@@ -570,7 +590,9 @@ eas build:configure
 You should now have a `eas.json` file in your app directory. 
 
 <!-- 
+- run command first, then create
 - open expo dev show new app created
+- cli is not in package
 -->
 
 ---
@@ -646,6 +668,7 @@ eas build
 
 
 <!--
+- Talk a little about dev account, ios has a bunch of questions
 - open expo dev show app
 - can't really follow along after this point
 - notice the bundle ids
@@ -690,6 +713,12 @@ After running the previous `eas build` command, the app.json has been updated wi
 
 ```
 
+<!--
+Little recap
+
+Built the app
+-->
+
 ---
 
 # App Stores & App Scaffolding
@@ -711,6 +740,7 @@ When we ran the `eas build` command for ios, Expo created an app identifier for 
 Google doesn't require a application/bundle ID on app creation. It will just use the ID from the first app that is uploaded.
 
 <!-- 
+- Name taken
 - You won't get access to these app stores until you setup your developer accounts
 - Show IOS Identifier automagic creation
 - Create new app in Connect
@@ -718,14 +748,39 @@ Google doesn't require a application/bundle ID on app creation. It will just use
 -->
 
 ---
+layout: image-right
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/transporter.png?alt=media&token=93ff1270-4c50-41d1-8452-ececb97a509e
+---
 
-# Testing
+# Uploading
 
-Apple and Google both have ways to test the app in a production-like state before actually releasing the app.
+While Expo is super handy with its automated `eas submit` feature for uploading app builds, there's value in mastering the manual way. Let's dive in!
 
-Apple uses __Testflight__ which is a standalone app users can download to their phones or devices and after being invited to test the app, they will recieve updates and notifications of new builds for them to download.
+Apple being apple, has a special app to upload things
+- **Transporter**: [https://apps.apple.com/us/app/transporter/id1450874784](https://apps.apple.com/us/app/transporter/id1450874784)
 
-Google doesn't have a standalone app but in the Google Play Console you can create Internal, Closed and Open Testing tracks where you can invite people to test your builds.
+Google keeps it breezy. Just drag, drop, and you're good to go with your builds! 🚀
+
+
+<!-- 
+- Explain eas submit
+- Android signing key on first upload
+- Upload the apps
+- I won't submit these apps, they'll probably get declined for just having a button in them anyways
+-->
+
+---
+layout: image-right
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/testflight.png?alt=media&token=5f1cd065-b4ac-4ed8-999b-12d49f1b2fbd
+---
+
+# Testing Before Releasing
+
+Apple and Google make it super easy to give your app a trial run in a real-world setting before it goes live for everyone.
+
+Apple's got [Testflight](https://apps.apple.com/us/app/testflight/id899247664) which is a standalone app users can download. Once invited, you'll receive updates and notifications about new versions to explore.
+
+On the Google side, there isn't a standalone app. Instead, within the Google Play Console, you've got options like Internal, Closed, and Open Testing tracks. Just invite your testers and they can grab the app right from the Play Store.
 
 
 <!-- 
@@ -733,29 +788,69 @@ Expo code differs from built code, it's possible for some issues to pop up durin
 It's also a great place to invite non-developers to test the app
 -->
 
-
+---
+layout: image-right
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/expo-logo.png?alt=media&token=4fd0ee09-861c-4cad-8b9c-871999586baf
 ---
 
-# Uploading & EAS Submit
+# OTA
 
-https://apps.apple.com/us/app/transporter/id1450874784?mt=12
+Expo also provides an awesome feature called [Expo Updates](https://docs.expo.dev/versions/latest/sdk/updates/), or also refferred to commonly as _Over the air (OTA)_ updates.
+
+If you have updates to your live app, and you don't want to go through the build & submission process, you can use OTA updates. They push your updated code directly to your app.
+
 
 <!-- 
-- Android signing key on first upload
-- Assets, images, screenshots, etc
+- Native code won't work, just JS
+- Worth still submitting through regular process if a large chunk of UI has changed or something
 -->
+
+---
+layout: image-right
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/sreens.png?alt=media&token=9af66f33-9587-4c36-b86d-c9b75e3e40f7
 ---
 
+# Store Assets & Metadata
+
+A super common thing to happen when developing any app, is you spend weeks or months on your app and you're ready to release it. But when you go to submit you realise you need to create screenshots and come up with a catchy description for your app.
+
+Overlooking these can inadvertently delay your app's release. Stay ahead, and ensure a timely launch!
+
+<!-- 
+- Logos, Splashscreen
+- Run through an app screenshots
+-->
+
+---
+layout: image-right
+image: https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/sentry.png?alt=media&token=db57b9c4-daf1-4940-a73d-e316be8d7ef0
+--- 
+
+# Errors & Analytics
+
+In production, apps won't display RedBox or YellowBox. Instead, if there's an error, the app might simply crash.
+
+For such unexpected moments, consider integrating tools like [Sentry](https://sentry.io/welcome/). They ensure that you receive detailed logs and alerts when your app faces issues in production.
+
+While App stores offer basic analytics like installs and user activity, they remain siloed on their platforms. To consolidate and view all your metrics in one place, something like [Firebase](https://firebase.google.com/) or [Google Analytics](https://marketingplatform.google.com/about/analytics/) is a good choice.
+
+
+<!-- 
+Apple & Google provide basic analytics, but if you want to track more custom stuff look at google analytics or something similar, firebase etc
+-->
+
+
+---
 
 # App Review Process
 
-After submitting apps for approval you need to wait for your app to get approved. This can unfortunately vary from a couple of hours to 3-4 days to even weeks at times. Generally speaking on your first submission it will take the longest as there is a lot of stuff to review. Most subsequent reviews tend to take less time as Apple and Google have tools in place to check what code has changed and they just review your changes as to the entire app again.
+Once you submit your apps, a waiting game begins for approval. The duration can fluctuate — from mere hours to several days, and occasionally even weeks. Typically, the first submission takes the longest due to the thorough review involved. However, subsequent reviews are often quicker. Platforms like Apple and Google employ tools to assess the changes made, rather than revisiting the entire app.
 
-This is something to keep in mind if you want to schedule a release date for your app. 
+If you're planning a specific release date, factor in this variable review timeline.
 
-It is also possible to automatically release upon approval, or to manually release your app upon approval. It's pretty common to do a manual release so you can wait to release both the iOS and Android versions at the same time after they have both been approved.
+You have flexibility post-approval: choose between an automatic release or opt for manual control. Many developers prefer manual releases, ensuring simultaneous unveiling of both iOS and Android versions.
 
-If your app gets rejected it's not a big deal, Apple and Android usually give in depth instructions and details as to what was rejected and to why and give solutions to resolve it. You just need to fix up your changes and re upload/submit.
+Rejection isn't the end of the world! Apple and Google provide detailed feedback on the issues. All that's required is addressing the concerns and resubmitting. Stay patient and persistent!
 
 <!-- 
 
@@ -763,25 +858,27 @@ If your app gets rejected it's not a big deal, Apple and Android usually give in
 
 ---
 
-# Costs
+# Developer Accounts
 
-Here are some costs to be aware of if you were interested in creating apps.
+If you were interested in getting into some app dev, there are some financial commitments upfront.
+ 
+Here's a quick rundown:
 
 <br/>
 
 **Apple Developer Program:** 
 
-Cost: _$100 USD (yearly)_
+Cost: _$100 USD annually_.
 
-Info: [https://developer.apple.com/programs](https://developer.apple.com/programs/)
+Details: [Apple Developer Program Info](https://developer.apple.com/programs/)
 
 <br/>
 
 **Google Play Console:** 
 
-Cost: _$25 USD (one off fee)_
+Cost: _A one-time fee of $25 USD._
 
-Info: [https://support.google.com/googleplay/android-developer](https://support.google.com/googleplay/android-developer/answer/6112435?hl=en)
+Details: [Google Play Console Info](https://support.google.com/googleplay/android-developer/answer/6112435?hl=en)
 
 <!--
 
@@ -789,17 +886,20 @@ Info: [https://support.google.com/googleplay/android-developer](https://support.
 
 ---
 
-# GST
+# App Monetization
 
-- If you just want to upload free apps you can do so without registering for GST.
-- if you want to make a paid app, whether it's a one off purchase, in app purchases or subscriptions, you need to register for GST.
-- Apple and Google take a 30% cut of your paid apps.
-- There are new _Small Business Programs_ for apple and android that bring their cut down to 15%.
-- You can do free apps with ads without registering for GST
+When embarking on the app monetization journey, several considerations come into play, from GST registration to understanding platform-specific cuts. Here's a deeper dive into the key points:
+
+- **Free Apps**: No GST registration needed for purely free apps.
+- **Paid Apps**: Planning to charge users? Whether it's a one-time fee, in-app purchases, or subscriptions, you must register for GST.
+- **Revenue Shares**: Apple and Google each take a 30% cut from paid app earnings. Keep this in mind when setting prices.
+- **Small Business Perks**: Both platforms offer Small Business Programs which can reduce their take to 15%. A significant boost for qualifying developers.
+- **Free Apps with Ads**: Earning from ads in your free apps? You're in luck; no GST registration is necessary.
 
 <!--
 - Even if you earn under the threshold, which is around 70k or something
 - Why? Apple/google bill people on your behalf and they defintely earn over 70k.
+- If you try to redirect to another site or open a iframe in your app in order to bypass apples revenue share, they'll often reject your app
 -->
 
 ---
@@ -813,4 +913,18 @@ class: text-center
 - Notifications
 - Asst State Counter
 - Expo Router
+-->
+
+---
+layout: center
+class: text-center
+---
+# Thanks!
+
+Feel free to hit me up on [LinkedIn](https://www.linkedin.com/in/dyalg/) if you want to ask any questions you couldn't think of today. 
+
+Happy coding! 🚀
+
+<!--
+- Skipped over a lot of stuff
 -->

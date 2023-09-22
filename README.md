@@ -1,2 +1,5 @@
-[Hosted Slidev Slides](yalgie-expo-mc.netlify.app)
-[PDF Export](https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/slides-export.pdf?alt=media&token=a3d5ca95-59c5-44ac-8627-24bad5289121)
+# Expo Masterclass
+
+[Hosted Slides](https://yalgie-expo-mc.netlify.app)
+
+[PDF Slides](https://firebasestorage.googleapis.com/v0/b/yalgie-expo-mc.appspot.com/o/slides-export.pdf?alt=media&token=8771a21c-466d-4b57-8138-4bd7773401f5)
