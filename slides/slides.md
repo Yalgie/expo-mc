@@ -289,34 +289,6 @@ Open the `App.js` file and make some changes to the `<Text />` component, save y
 
 ---
 
-# Expo Docs
-
-Let's explore some of the expo docs.
-
-**Expo StatusBar:** [https://docs.expo.dev/versions/latest/sdk/status-bar/](https://docs.expo.dev/versions/latest/sdk/status-bar/)
-
-```jsx
-// App.js
-<StatusBar style="auto" />
-
-<StatusBar style="light" />
-
-<StatusBar style="dark" />
-```
-
-Most if not all expo components have a react native equivelant.
-
-**React Native StatusBar:** [https://reactnative.dev/docs/statusbar](https://reactnative.dev/docs/statusbar)
-
-<!--
-- Exploring the docs
-- Options
-- Explain android/ios options
-- Compare react native Status Bar
--->
-
----
-
 # Simulators
 
 You may have noticed some options like opening in a simulator earlier.
@@ -348,6 +320,34 @@ _Don't do this right now, they are pretty big downloads_
 - Show iOS and Android sims
 - For the rest of the presentation though i'll use sims so I can show my screen easier
 - run yarn ios
+-->
+
+---
+
+# Expo Docs
+
+Let's explore some of the expo docs.
+
+**Expo StatusBar:** [https://docs.expo.dev/versions/latest/sdk/status-bar/](https://docs.expo.dev/versions/latest/sdk/status-bar/)
+
+```jsx
+// App.js
+<StatusBar style="auto" />
+
+<StatusBar style="light" />
+
+<StatusBar style="dark" />
+```
+
+Most if not all expo components have a react native equivelant.
+
+**React Native StatusBar:** [https://reactnative.dev/docs/statusbar](https://reactnative.dev/docs/statusbar)
+
+<!--
+- Exploring the docs
+- Options
+- Explain android/ios options
+- Compare react native Status Bar
 -->
 
 ---
